@@ -136,20 +136,6 @@ def main( args=None ):
         start_single( args )
         return
 
-    ## only one argument passed -- it should be *.ics file path
-    file_path = sys.argv[1]
-    if os.path.isfile( file_path ) is False:
-        ## not file -- run as usual
-        start_single( args )
-        return
-
-    ## file passed -- add to queue
-    sys.argv = sys.argv[:1]
-    put_to_queue( "file", file_path )
-
-    ## run application
-    start_single( args )
-
 
 if __name__ == '__main__':
     main()
